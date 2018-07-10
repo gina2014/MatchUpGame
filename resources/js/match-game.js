@@ -16,6 +16,19 @@ function cardData(value, color, isFlipped)
   this.isFlipped = isFlipped;
 }
 
+function playBtnAudio(option)
+{
+  if(option === 'btn')
+  {
+    var snd = new Audio("resources/audio/Click2.wav");
+  }
+  else if (option === 'win') {
+    var snd = new Audio("resources/audio/button-21.wav");
+  }
+  snd.volume = 0.1;
+  snd.play();
+}
+
 /*
   Sets up a new game after HTML document has loaded.
   Renders a 4x4 board of cards.
@@ -103,7 +116,7 @@ MatchGame.renderCards = function(cardValues, $game) {
       if(winCondition === false)
       {
         console.log("In the flipcard call to function");
-
+        playBtnAudio('btn');
         MatchGame.flipCard($(this), $('#game'));
       }
   });
@@ -203,4 +216,15 @@ MatchGame.createButton = function()
   // Position the BUTTON
   var body = document.getElementsByTagName("rules")[0];
   rules.appendChild(btn);
+
+  btn.addEventListener ("click", function()
+  {
+    playBtnAudio();
+    window.setTimeout(function()
+    {
+      window.location.reload(true);
+    }, 300);
+
+    //MatchGame.restartGame();
+  });
 };

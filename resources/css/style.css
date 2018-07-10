@@ -47,5 +47,10 @@ body {
 }
 
 button {
-  background-color: red;
+  background-color: rgb(32, 64, 86);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
 }
