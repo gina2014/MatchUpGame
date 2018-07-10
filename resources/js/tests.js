@@ -8,8 +8,10 @@ MatchGameTests.runTests = function() {
   MatchGameTests.logErrors(errors);
 };
 
+
 MatchGameTests.testGenerateCardValues = function(errors) {
   // Test that generateCardValues function exists.
+  
   var hasGenerateCardValues = MatchGame.generateCardValues && typeof MatchGame.generateCardValues === 'function';
   if (!hasGenerateCardValues) {
     errors.push("generateCardValues: MatchGame object should have a function called generateCardValues.");
