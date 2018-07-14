@@ -21,10 +21,10 @@ body {
   margin: 1rem auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-image: url("../images/download2.jpg");
+  /*background-image: url("../images/download2.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 #rules {
