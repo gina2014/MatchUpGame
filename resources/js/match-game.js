@@ -16,16 +16,18 @@ function cardData(value, color, isFlipped)
   this.isFlipped = isFlipped;
 }
 
-function playBtnAudio(option)
+function playAudio(option)
 {
   if(option === 'btn')
   {
     var snd = new Audio("resources/audio/Click2.wav");
+    snd.volume = 0.1;
   }
   else if (option === 'win') {
-    var snd = new Audio("resources/audio/button-21.wav");
+    var snd = new Audio("resources/audio/Short_win_sound.wav");
+    snd.volume = 0.05;
   }
-  snd.volume = 0.1;
+
   snd.play();
 }
 
@@ -116,7 +118,7 @@ MatchGame.renderCards = function(cardValues, $game) {
       if(winCondition === false)
       {
         console.log("In the flipcard call to function");
-        playBtnAudio('btn');
+        playAudio('btn');
         MatchGame.flipCard($(this), $('#game'));
       }
   });
@@ -196,6 +198,7 @@ MatchGame.checkWin = function()
       console.log("Value is :", matchedCards[i].data('value'));
     }
     winCondition = true;
+    playAudio('win');
     MatchGame.createButton();
   }
   else {
@@ -219,7 +222,6 @@ MatchGame.createButton = function()
 
   btn.addEventListener ("click", function()
   {
-    playBtnAudio();
     window.setTimeout(function()
     {
       window.location.reload(true);
