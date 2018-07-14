@@ -40,6 +40,7 @@ $(document).ready(function() {
   var $game = $('#game');
   var values = MatchGame.generateCardValues();
   MatchGame.renderCards(values, $game);
+  MatchGame.createButton();
 });
 
 
@@ -199,7 +200,6 @@ MatchGame.checkWin = function()
     }
     winCondition = true;
     playAudio('win');
-    MatchGame.createButton();
   }
   else {
     {
@@ -226,6 +226,7 @@ MatchGame.createButton = function()
     {
       window.location.reload(true);
     }, 300);
+    playAudio('btn');
 
     //MatchGame.restartGame();
   });
