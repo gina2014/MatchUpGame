@@ -7,10 +7,9 @@ body {
   background-color: #87cefa; /*rgb(255, 242, 242);*/
   color: rgb(74, 74, 74);
   background-image: url("../images/download2.jpg");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 1200px;
 }
 
 .bold {
