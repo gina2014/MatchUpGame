@@ -25,7 +25,7 @@ function playAudio(option)
   }
   else if (option === 'win') {
     var snd = new Audio("resources/audio/Short_win_sound.wav");
-    snd.volume = 0.05;
+    snd.volume = 0.01;
   }
 
   snd.play();
@@ -109,7 +109,7 @@ MatchGame.renderCards = function(cardValues, $game) {
 
     console.log(cardValues[i]);
 
-    var $card = $('<div class="card col-xs-3 col-sm-3 col-md-3 col-lg-"></div>');
+    var $card = $('<div class="card col-xs-3 col-md-3"></div>');
     $card.data(newCardData);
 
     $game.append($card);
@@ -161,7 +161,7 @@ MatchGame.flipCard = function($card, $game) {
       for (var i = 0; i < flippedCards.length; i++)
       {
         var card = flippedCards[i];
-        card.css('background-color', 'rgb(153, 153, 153)',
+        card.css('background-color', '#778899',//'rgb(153, 153, 153)',
                         'color', 'rgb(204, 204, 204)');
 
         matchedCards.push(card);
@@ -217,7 +217,7 @@ MatchGame.createButton = function()
   document.body.appendChild(btn);
 
   // Position the BUTTON
-  var body = document.getElementsByTagName("rules")[0];
+  var body = document.getElementsByTagName("button")[0];
   rules.appendChild(btn);
 
   btn.addEventListener ("click", function()
